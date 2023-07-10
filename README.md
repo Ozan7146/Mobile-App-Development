@@ -1,2 +1,2 @@
-# Mobile App Development
- JS,CSS,React Native,HTML
+# Stajj
+ CSS,JS,React-Native,HTML
