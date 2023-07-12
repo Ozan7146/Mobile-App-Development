@@ -1,14 +1,21 @@
-import React, {useState} from 'react';
-import {StyleSheet, Text, View, FlatList,onPress,Alert,TouchableWithoutFeedback,Keyboard} from 'react-native';
 
-export default function NewPage(){
-    return (
-        <View>  
-            <Text>This is second page </Text>
+import React from 'react';
+import { View, Button } from 'react-native';
+import { useNavigation } from 'react-navigation-hooks';
 
-        </View>
+const HomeScreen = () => {
+  const { navigate } = useNavigation();
 
+  const handleGoToSecondPage = () => {
+    navigate('SecondPage');
+  };
 
-    );
-}
+  return (
+    <View>
+      <Button title="Go to Second Page" onPress={handleGoToSecondPage} />
+    </View>
+  );
+};
+
+// export default HomeScreen;
 

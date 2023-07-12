@@ -3,15 +3,21 @@ import {StyleSheet, Text, View, FlatList,onPress,Alert,TouchableWithoutFeedback,
 import Header from './components/header';
 import ToDoItem from './components/Todoitem';
 import AddTodo from  './components/addTodo';
-import Sandbox from './components/sandbox';
-import {NavigationContainer} from '@react-navigation/native';
-import { createAppContainer } from 'react-navigation';
-import { createStackNavigator } from 'react-navigation-stack';
-import NewPage from './components/NewPage';
+// import Sandbox from './components/sandbox';
+// import HomeScreen from './components/NewPage';
+
+// import {NavigationContainer} from '@react-navigation/native';
+
+// import { createStackNavigator } from 'react-navigation-stack';
+
+
+// const Stack = createStackNavigator();
+
 
 export default function App() {
  
 //const AppNavigator 
+
 
 
   const [todos, setTodos] = useState([
@@ -48,30 +54,40 @@ setTodos((prevTodos)=>{
   return (
     
    // <Sandbox/>
+   
+    //   <Stack.Screen name="Home" component={HomeScreen} >  <NavigationContainer>
+    //    <Stack.StackNavigator>
+    //   <Button title="New Page" onPress={() => navigation.navigate('NewPage')}/>
     <TouchableWithoutFeedback onPress={()=>{
       Keyboard.dismiss();
       console.log('dismissed keyboard');
     }}> 
-      
+  
     <View style={styles.container}>
       <Header />
       <View style={styles.content}>
         <AddTodo submitHandler={submitHandler}/>
         {/* to form */}
         <View style={styles.list}>
+          
           <FlatList
+               
             data={todos}
             renderItem={({item}) =>(
                 <ToDoItem item={item} pressHandler={pressHandler}/>
-
             )}
-            
-            
             />
+            
         </View>
       </View>
     </View>
     </TouchableWithoutFeedback>
+    
+    /* </Stack.Screen>
+    <Stack.Screen name="NewPage" component={NewPage} />
+    </Stack.StackNavigator>
+    </NavigationContainer> */
+  
   );
 }
 
