@@ -8,14 +8,14 @@ import SecondPage from './Screens/SecondPage'
 
 export default function App(){
   
-  const Stack = createNativeStackNavigator();
+  //const Stack = createNativeStackNavigator();
   return(
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name = 'Home' component={HomePage} />
-      </Stack.Navigator>
-    </NavigationContainer>
-    
+    // <NavigationContainer>
+    //   <Stack.Navigator>
+    //     <Stack.Screen name = 'Home' component={HomePage} />
+    //   </Stack.Navigator>
+    // </NavigationContainer>
+    <View><Text>Hello</Text></View>
    
 
   );
