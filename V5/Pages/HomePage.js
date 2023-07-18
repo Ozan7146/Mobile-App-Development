@@ -50,7 +50,9 @@
 // })
 //-------------------------------------------------------------------------------------------------------------------
 
-import React, {useState} from 'react';
+
+
+import React, {cloneElement, useState} from 'react';
 import {StyleSheet, Text, View, FlatList,onPress,Alert,TouchableWithoutFeedback,Keyboard,Button} from 'react-native';
 import Header from './components/header';
 import ToDoItem from './components/Todoitem';
@@ -65,28 +67,30 @@ export default function HomePage({navigation}) {
     {text: 'play on the switch', key: '3'},
   ]);
     
-const [deleted, sendDeleted] = useState('')
-      
+const [deleted, sendDeleted] = useState([])
 
-const pressHandler = (key) => {
-  setTodos((prevTodos) => {
-    const deletedItem = prevTodos.find((todo) => todo.key === key);
-    // Silinen öğeyi "sendDeleted" ile güncelle
-     sendDeleted((prevDeleted) => prevDeleted.concat(deletedItem.text));
-    //sendDeleted(deletedItem)
-    //sendDeleted(prevTodos.todo)
-    return prevTodos.filter(todo => todo.key != key) 
-
+const pressHandler = (item) => {
+ 
+  
+    //const deletedItem = prevTodos.find((todo) => todo.key === key);
+    sendDeleted((prevTodos)=> {
+    return [{text:item.text,key:item.key},
+            ...prevTodos
+    ]
+  })
+    
+    setTodos((prevTodos) => {
+      return prevTodos.filter(todo => todo.key != item.key)     
   });
 }
-console.log({deleted})
+// console.log({deleted})
 
 const submitHandler=(text)=>{
 if(text.length > 3){
- 
+
 setTodos((prevTodos)=>{
   return [
-    {text: text,key: Math.random().toString()},
+    {text: text,id: Math.random().toString()},
     ...prevTodos
   ];
 })
@@ -121,9 +125,8 @@ setTodos((prevTodos)=>{
             />
             <Button 
             title='Other Page'
-            onPress={()=>navigation.navigate('SecondPage', {
-            deleted: deleted,
-          })}
+            onPress={()=>navigation.navigate('SecondPage', {blogpost:deleted})
+          }
             />
         </View>
       </View>
