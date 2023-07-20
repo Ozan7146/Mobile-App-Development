@@ -9,12 +9,14 @@ export default function SecondPage({route}) {
     console.log(route.params.blogpost)
   return (
     <View style={styles.container}>
+        
         <FlatList
         data={route.params.blogpost}
         renderItem={({item}) => (
           <Item title={item.text} />
       )}
         />
+
     </View>
   )
 }

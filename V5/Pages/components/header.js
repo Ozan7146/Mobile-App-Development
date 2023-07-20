@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
         height:80,
         paddingTop:30,
         backgroundColor:'gray',
+        flex:0.4,
         
     },
     title:{
