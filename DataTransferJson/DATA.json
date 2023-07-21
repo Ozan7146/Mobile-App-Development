@@ -1,0 +1,36 @@
+{
+    "one":{
+               
+        "key" : "1",
+        "title": "start-1",
+        "description": "First JSON Experience",
+        "image": "https://img.tamindir.com/2022/07/476731/anit-agac-uygulamasi-nedir-ne-ise-yarar.jpg" 
+        
+    },
+
+    
+
+   "two":{        
+        "key" : "2",
+        "title": "start-2",
+        "description": "First JSON Experience",
+        "image": "https://www.gazetekadikoy.com.tr/Uploads/gazetekadikoy.com.tr/haberler/200495576260475-img.JPG" 
+    },
+
+
+    "three":{        
+        "key" : "3",
+        "title": "start-3",
+        "description": "First JSON Experience",
+        "image": "https://www.yogadergisi.com/images/2020_document/ozgebal/agac.jpg" 
+    },
+
+
+      "four"  : {        
+        "key" : "4",
+        "title": "start-4",
+        "description": "First JSON Experience",
+        "image": "https://img.piri.net/resim/upload/2021/05/01/11/54/ddf95016adobestock_23062011.jpeg" 
+    }
+    
+}
